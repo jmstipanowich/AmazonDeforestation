@@ -1,6 +1,6 @@
 # The Amazon Rainforest and the Impact of Deforestation
 
-![Amazonforest.img](images/66AC71F3-06E0-43EC-BEDA9DDA12175F43_source.jpg)
+![Amazonforest.img](Images/66AC71F3-06E0-43EC-BEDA9DDA12175F43_source.jpg)
 
 Author: James Stipanowich
 
@@ -29,13 +29,9 @@ All data I included occurred between the years 1999 and 2019.
 
 In order to look at the spread of ratings in the dataset for my analyses in this project, I created a graph showing how many ratings were in my dataset and how each movie was rated accordingly within the dataset:
 
-![image.png](images/ratingschart.png)
-
 There were 100836 ratings of movies from past viewings of movies in the dataset. The most common movie rating was a '4' rating. However, I opted to look at the most highly rated movies (a '5' rated movie) when making most movie recommendations.
 
 Also, I constructed a graph of the number of rated movies for each unique user in the dataset: 
-
-![userchart](images/userchart.png)
 
 There were explicit ratings from my dataset. The most number of ratings a single user provided was over 2500, which provides a lot of information for assembling recommendations. Some users only provided a couple of ratings so a filling of missing values occurred in some of my recommedation systems creations to get more similarity information to provide predicted recommendations for some users.
 
