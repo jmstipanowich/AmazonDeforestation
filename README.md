@@ -1,6 +1,6 @@
 # The Amazon Rainforest and the Impact of Deforestation
 
-![Amazonforest.img](Images/66AC71F3-06E0-43EC-BEDA9DDA12175F43_source.jpg)
+![Amazonforest.img](Images/Bernardo-Flores_Barcelos_6.jpg)
 
 Author: James Stipanowich
 
