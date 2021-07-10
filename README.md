@@ -27,13 +27,17 @@ All data I included occurred between the years 1999 and 2019.
 
 ## Data Preparation
 
-In order to look at the spread of ratings in the dataset for my analyses in this project, I created a graph showing how many ratings were in my dataset and how each movie was rated accordingly within the dataset:
+I desired to identify how Amazon deforestation as a whole associates with the deforestation totals for each Brazilian state, weather phenomena, forest fires, population, and GDP(US dollars). I constructed a variety of plots and graphs to look at each of the mentioned features in relation to Amazon deforestation totals between 1999-2019.
 
-There were 100836 ratings of movies from past viewings of movies in the dataset. The most common movie rating was a '4' rating. However, I opted to look at the most highly rated movies (a '5' rated movie) when making most movie recommendations.
+Weather phenomena was found to have little correlation with Amazon deforestation between 1999-2019 so I did not include this element of analysis when I went on to further analysis and modeling.
 
-Also, I constructed a graph of the number of rated movies for each unique user in the dataset: 
+I created a dataset to look at the correlation of the other deforestation impacting features in comparison with Amazon deforestation as a whole. My correlation plot is as follows:
 
-There were explicit ratings from my dataset. The most number of ratings a single user provided was over 2500, which provides a lot of information for assembling recommendations. Some users only provided a couple of ratings so a filling of missing values occurred in some of my recommedation systems creations to get more similarity information to provide predicted recommendations for some users.
+![Correlation.png](Images/correlation.png)
+
+The deforestation amounts for the Brazilian states of Mato Grosso, Para, and Rondonia were the most correlated with total Amazon deforestation amounts across all states.  These states are pretty large states so holding high correlation percentages with total Amazonian deforestation is not unusual. Firespots were about 83% correlated with the Amazon deforestation total suggesting a strong relationship between fire outbreaks and Amazonian deforestation. Fire outbreaks may lead to deforestation. Population and GDP per capita(US dollars) had strong inverse correlations with total deforestation. The more the Amazon was deforested, the less population and GDP per capita(US dollars). Population was about 71% inversely correlated with total Amazon deforestation and GDP per capita(US dollars) was about 86% inversely correlated with total Amazon deforestation. Amazon deforestation driving down population sadly makes sense. Deforestation of the Amazon bringing down GDP per capita(US dollars) could be concerning as well.
+
+I used the correlation plotted features that relate to Amazon deforestation when I went on to modeling. 
 
 ## Data Modeling
 
@@ -47,38 +51,28 @@ The KNN model had a higher RMSE than the SVD model. The KNN model determined fiv
 
 The function-based built out method used a Euclidean distance metric to calculate user similarities. The function took out movies that were already watched by the user to increase the chance of unique movie recommendations. The function sorted the movies to only mostly recommend movies rated a '5' to keep with the theme of recommending only highly rated movies.
 
-## The Cold Start Problem
-
-My recommendation systems did well, but how is a common problem known as the cold start problem addressed? The cold start problem occurs where a new user is introduced to the dataset that has not provided a substantial amount of information to make recommendations. The SVD model was included to address the cold start problem. SVD involves the creation of a sparse matrix where user ratings for movies can be inferred based off of a few provided ratings or small amount of information from a new user in relation to already provided user information. The new user can be asked to provide a small amount of information about possible interests and a new user can be categorized in accordance with similar user preferences to determine what the new user might like. Also, what is popular or trending can be a recommendation created for a new user. My models mainly recommended highly rated movies around the same year that "Toy Story" was released, so what was popular in the year "Toy Story" was released was usually recommended to deal with the cold start problem. For the function-based recommendation system unrated movies were filled in with the mean rating for each column in the user ratings dataframe. A collaborative filtering user-based method was instilled. Movies that were already watched were left out of recommendations for a user. Movies that were recommended to users and considered popular were movies that were estimated to be highly rated by users.
 
 ## Conclusions
 
 - Make appropriate preparations for the seasonality trends of firespots.
 
-- Enforce fire restrictions more strongly during strong firespot season.
+- Employ efforts to enforce stronger fire restrictions during strong firespot season.
 
-- Five similar movie recommendations for user 43 who watched "Toy Story" and rated it a '5' from the SVD model were: 
-
-Apollo 13 (1995)/4.9,
-Forrest Gump (1994)/5.0,
-Star Wars: Episode IV - A New Hope (1977)/5.0,
-The Jungle Book (1994)/4.8,
-and Mrs. Doubtfire (1993)/4.8
 
 ## Recommendations for Further Analysis
 
-- Incorporate satellite images informtion that shows whether or not deforestation is occurring to aid in identifying when deforestation is happening
+- Incorporate and analyze satellite image classification information that show different activities relating to deforestation and whether or not deforestation is occurring at given times. These images aid in dertermining when deforestation is happening.
 
 
 ## For More Information
 
-See the full analysis of my findings in Recommendations.ipynb
+See the full analysis of my findings in Amazon.ipynb
 
 Contact me at jmstipanowich@gmail.com
 
 ## Repository Structure
 
-├── images
+├── Images
 
 ├── README.md
 
