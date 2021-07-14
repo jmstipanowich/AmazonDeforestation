@@ -31,7 +31,7 @@ I desired to identify how Amazon deforestation as a whole associates with the de
 
 Weather phenomena was found to have little correlation with Amazon deforestation between 1999-2019 so I did not include this element of analysis when I went on to further analysis and modeling.
 
-I created a dataset to look at the correlation of the other deforestation impacting features in comparison with Amazon deforestation as a whole. My correlation plot is as follows:
+I created a dataset to look at the correlation of the other deforestation related features in comparison with Amazon deforestation as a whole. My correlation plot is as follows:
 
 ![Correlation.png](Images/correlation.png)
 
@@ -60,6 +60,8 @@ The function-based built out method used a Euclidean distance metric to calculat
 
 
 ## Recommendations for Further Analysis
+
+- Integrate more features such as annual soybean yields, annual timber production amounts, and number of cattle ranches in Brazil per year in future modeling. Soybean production, the manufacturing of timber, and the formations of cattle ranches strongly influence the quantities of Amazonian deforestation in Brazil.
 
 - Incorporate and analyze satellite image classification information that show different activities relating to deforestation and whether or not deforestation is occurring at given times. These images aid in dertermining when deforestation is happening.
 
