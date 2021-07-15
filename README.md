@@ -54,6 +54,10 @@ The function-based built out method used a Euclidean distance metric to calculat
 
 ## Conclusions
 
+- Acknowledge high deforestation totals and strong seasonality trends of firespots within the Brazilian states of Mato Grosso, Para, and Rondonia to mitigate further deforestation issues within these states.
+
+- Recognize implications of unprecedented firespots for the states of Amazonas and Roraima in 2019 and for the month of March as a whole in 2019 
+
 - Make appropriate preparations for the seasonality trends of firespots.
 
 - Employ efforts to enforce stronger fire restrictions during strong firespot season.
