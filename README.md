@@ -10,13 +10,13 @@ The Amazon rainforest is disappearing at an alarming rate in Brazil. Each year t
 
 ## Business Problem
 
-For this project I am acting as a data scientist with a wildlife organization in Brazil to determine if Amazon deforestation is increasing. I want to determine what factors influence the deforestation of the Amazon and on what scale their influence lies. I plan to conclude whether forest fires are correlated with deforestation and what patterns and information lie within the occurrences of forest fires across a variety of Brazilian states that may impact deforestation.
+For this project I am acting as a data scientist with an environment-focused organization in Brazil to determine if Amazon deforestation is increasing. I want to determine what factors influence the deforestation of the Amazon and on what scale their influence lies. I plan to conclude whether forest fires are correlated with deforestation and what patterns and information lie within the occurrences of forest fires across a variety of Brazilian states that may impact deforestation.
 
 ## The Data
 
 The data for my project came from a variety of different sources. 
 
-I compiled three Kaggle datasets for my project from https://www.kaggle.com/mbogernetto/brazilian-amazon-rainforest-degradation. The first Kaggle dataset on Amazon deforestation was originally sourced from The Brazilian Amazon Rainforest Monitoring Program by Satellite. The dataset contains 16 rows and 11 columns. The second Kaggle dataset about fire outbreaks came from The Fires Database at The National Institute for Space Research. The dataset holds 16 rows and 4 columns. The third Kaggle dataset on weather phenomena was initially derived from Golden Gate Weather Services. The dataset has 2104 rows and 6 columns.
+I compiled three Kaggle datasets for my project from https://www.kaggle.com/mbogernetto/brazilian-amazon-rainforest-degradation. The first Kaggle dataset on Amazon deforestation was originally sourced from The Brazilian Amazon Rainforest Monitoring Program by Satellite. The dataset contains 16 rows and 11 columns. The second Kaggle dataset about fire outbreaks came from The Fires Database at The National Institute for Space Research. The dataset holds 2104 rows and 6 columns. The third Kaggle dataset on weather phenomena was initially derived from Golden Gate Weather Services. The dataset has 16 rows and 5 columns.
 
 I obtained additional data of Brazilian population statistics from https://www.macrotrends.net/countries/BRA/brazil/population. 
 
@@ -32,7 +32,7 @@ In order to start to distinguish if Amazon deforestation is decreasing, I create
 
 The year 2004 had the most deforestation out of the years between 2004 and 2019 and the year 2012 had the least deforestation out of the years between 2004 and 2019. Deforestation generally decreased from 2004-2012, but then steadily increased in more current time of 2012-2019. 
 
-I desired to identify how Amazon deforestation totals as a whole associate with each Brazilian state, weather phenomena, forest fires, population, and GDP(US dollars). I constructed a variety of plots and graphs to look at each of the mentioned features in relation to Amazon deforestation totals between 1999-2019.
+I desired to identify how Amazon deforestation totals associate with each Brazilian state, weather phenomena, forest fires, population, and GDP(US dollars). I constructed a variety of plots and graphs to look at each of the mentioned features in relation to Amazon deforestation totals between 1999-2019.
 
 Weather phenomena was found to have little correlation with Amazon deforestation between 1999-2019 so I did not include this element for analysis when I went on to further analysis and modeling. Overall, there was a lack of a strong relationship between weather phenomena and Amazonian deforestation, which suggests more human causes of deforestation than natural causes.
 
@@ -40,7 +40,7 @@ I created a dataset to look at the correlations of the other deforestation relat
 
 ![Correlation.png](Images/correlation.png)
 
-The deforestation amounts for the Brazilian states of Mato Grosso, Para, and Rondonia were the most correlated with total Amazon deforestation amounts across all states.  These states are pretty large states so holding high correlation percentages with total Amazonian deforestation is not unusual. Firespots were about 83% correlated with the Amazon deforestation total suggesting a strong relationship between fire outbreaks and Amazonian deforestation. Fire outbreaks may lead to deforestation. Population and GDP per capita(US dollars) had strong inverse correlations with total deforestation. Population was about 71% inversely correlated with total Amazon deforestation and GDP per capita(US dollars) was about 86% inversely correlated with total Amazon deforestation. Population decreasing with more Amazon deforestation sadly makes sense. GDP per capita(US dollars) decreasing with increasing deforestation of the Amazon could be concerning.
+The deforestation amounts for the Brazilian states of Mato Grosso, Para, and Rondonia were the most correlated with total Amazon deforestation amounts across all states.  These states are pretty large states so holding high correlation percentages with total Amazonian deforestation is not unusual. Firespots were about 83% correlated with the total Amazon deforestation suggesting a strong relationship between fire outbreaks and Amazonian deforestation. Fire outbreaks may lead to deforestation. Population and GDP per capita(US dollars) had strong inverse correlations with total deforestation. Population was about 71% inversely correlated with total Amazon deforestation and GDP per capita(US dollars) was about 86% inversely correlated with total Amazon deforestation. Population decreasing with more Amazon deforestation sadly makes sense. GDP per capita(US dollars) decreasing with increasing deforestation of the Amazon could be concerning.
 
 I used the correlation plotted features that relate to Amazon deforestation when I went on to modeling. 
 
@@ -50,17 +50,17 @@ I used the correlation plotted features that relate to Amazon deforestation when
 
 The first model I designed was a baseline linear regression model to predict how population, GDP per capita(US dollars), and firespots related to Amazon deforestation totals.
 
-My model predicted population, GDP per capita(US dollars), and firespots all as having an inverse relationship with my target variable of total deforestation. That means that population, GDP per capita(US dollars), and firespots all decrease with more deforestation. This result was different than my correlation plot with regard to firespots. The causes of firespots vary in general because firespots can be activated in both human and natural ways. My model was very overfit with an 86% r2 score for my training data and a 44% r2 score for my testing data. This is probably due to the small amount of data fed into my model influencing a tight fitting to few individual data points. Because of the r2 scores, I do not necessarily trust the inverse relationship this model projected between firespots and deforestation. I plan to look at firespots in more detail in future models because they seem to produce varying results. 
+My model predicted population, GDP per capita(US dollars), and firespots all as having an inverse relationship with my target variable of total deforestation. That means that population, GDP per capita(US dollars), and firespots all decrease with more deforestation. This result was different than my correlation plot with regard to firespots. The causes of firespots vary in general because firespots can be activated in both human and natural ways. My model was very overfit with an 86% r2 score for my training data and a 44% r2 score for my testing data. This is probably due to the small amount of data fed into my model influencing a tight fitting to few individual data points. Because of the r2 scores, I do not necessarily trust the inverse relationship this model projected between firespots and deforestation. I plan to look at firespots in more detail in future models because they do seem positively correlated with deforestation. 
 
 ### Modeling 2:
 
 Because firespots showed a correlation with Amazon deforestation of 83% in my correlation plot, I decided to do more firespots anaylsis in my next models regarding the 83% statistic as truth that more firespots have a strong chance of leading to greater deforestation.
 
-Fire outbreaks seemed to have a predominant decline in volume between the years 1999-2019, but there years with a higher number of firespots than previous years that I noticed in my analyses that could negatively impact deforestation totals over time. 
+Fire outbreaks seemed to have a predominant decline in volume between the years 1999-2019, but there were years with a higher number of firespots than previous years that I noticed in my analyses that could negatively impact deforestation totals over time. 
 
-For my second model creation I designed a function that formulates a dataframe with the number of firespots per month for a given year in a dataset and includes the minimum, maximum, and mean number of firespots per month for each of the previous years in the dataset combined to analyze how one given year of monthly firespots compares to other previous years of monthly firespots across all states in a dataset.
+For my second model creation I designed a function that formulates a dataframe with the number of firespots per month for a given year in a dataset and includes the minimum, maximum, and mean number of firespots per month for each of the previous years in the dataset combined to analyze how one given year of monthly firespot totals compares to other previous years of monthly firespots across all states.
 
-I tested my dataframe function on the year 2019 because I am using that year to do a lot of modeling analyses and comprehend firespots correlations between that year and previous years. I desired to know how 2019 compared to previous years in terms of firespot monthly totals to better understand if deforestation is increasing over time with relation to firespots. I graphed my analysis as well:
+I tested my dataframe function on the year 2019 because I am using that more current year to do a lot of modeling analyses and comprehend firespots correlations between that year and previous years. I desired to know how 2019 compared to previous years in terms of firespot monthly totals to better understand if deforestation is increasing over time with relation to firespots. I graphed my analysis as well:
 
 ![YearlyFires.png](Images/yearlyfires2019.png)
 
@@ -90,9 +90,9 @@ My full analyses lead me to the following conclusions:
 
 ## Recommendations for Further Analysis
 
-- Integrate more features such as annual soybean yields, annual timber production amounts, and number of cattle ranches in Brazil per year in future modeling. Soybean production, the manufacturing of timber, and the formations of cattle ranches impact the quantities of Amazonian deforestation in Brazil.
+- Integrate more features in future modeling such as annual soybean yields, annual timber production amounts, and number of cattle ranches in Brazil per year. Soybean production, the manufacturing of timber, and the formations of cattle ranches impact the quantities of Amazonian deforestation in Brazil.
 
-- Incorporate and analyze satellite image classification information that show different activities relating to deforestation and whether or not deforestation is occurring at given times. These images aid in dertermining when deforestation is happening.
+- Incorporate and analyze satellite image classification information that show different activities relating to whether or not deforestation is occurring at given times. These images aid in dertermining when deforestation is happening.
 
 ## For More Information
 
