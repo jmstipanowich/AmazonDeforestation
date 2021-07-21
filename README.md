@@ -6,11 +6,11 @@ Author: James Stipanowich
 
 ## Project Overview
 
-The Amazon rainforest is disappearing at an alarming rate in Brazil. Each year thousands of kilometers of rainforest are destroyed from deforestation. The Amazon rainforest is the world's biggest rainforest. The Amazon rainforest offers a huge ecosystem containing about 30 percent of the world's species and sustaining a life for people, animals, and plants across many Brazilian states. What happens when the developing environment in this area of the world is destroyed? What massive repercussions could there be for the world? How do many aspects of life such as the conquests for forest fires, the configurations of weather phenomena, the growth of population, and the expansion of GDP influence the deforestation of the Amazon? Will the Amazon rainforest still exist in years to come if deforestation continues? 
+The Amazon rainforest is disappearing at an alarming rate in Brazil. Each year thousands of kilometers of rainforest are destroyed from deforestation. The Amazon rainforest is the world's biggest rainforest. The Amazon rainforest offers a huge ecosystem containing about 30 percent of the world's species and sustaining a life for people, animals, and plants across many Brazilian states. What happens when the developing environment in this area of the world is destroyed? What massive repercussions could there be for the world? How do many aspects of life such as the conquests of forest fires, the configurations of weather phenomena, the growth of population, and the expansion of GDP influence the deforestation of the Amazon? Will the Amazon rainforest still exist in years to come if deforestation continues? 
 
 ## Business Problem
 
-For this project I am acting as a data scientist with an environment-focused organization in Brazil to determine if Amazon deforestation is increasing. I want to determine what factors influence the deforestation of the Amazon and on what scale their influence lies. I plan to conclude whether forest fires are correlated with deforestation and what patterns and information lie within the occurrences of forest fires across a variety of Brazilian states that may impact deforestation.
+For this project I am acting as a data scientist with an environmental conservation organization in Brazil to determine if Amazon deforestation is increasing. I want to determine what factors influence the deforestation of the Amazon and on what scale their influence lies. I plan to conclude whether forest fires are correlated with deforestation, and what patterns and information lie within the occurrences of forest fires across a variety of Brazilian states that may impact deforestation.
 
 ## The Data
 
@@ -26,21 +26,21 @@ All data I included occurred between the years 1999 and 2019.
 
 ## Data Preparation
 
-In order to start to distinguish if Amazon deforestation is decreasing, I created a plot of the total deforestated area across all Brazilian states in the Amazon for each year between 2004-2019. The plot is below:
+In order to start to distinguish if Amazon deforestation is increasing, I created a plot of the total deforestated area across all Brazilian states in the Amazon for each year between 2004-2019. The plot is below:
 
 ![Deforestation.img](Images/Amazondeforestationtotals.png)
 
-The year 2004 had the most deforestation out of the years between 2004 and 2019 and the year 2012 had the least deforestation out of the years between 2004 and 2019. Deforestation generally decreased from 2004-2012, but then steadily increased in more current time of 2012-2019. 
+The year 2004 had the most deforestation out of the years between 2004 and 2019 and the year 2012 had the least deforestation out of the years between 2004 and 2019. Deforestation generally decreased from 2004-2012, but then increased in more current time of 2012-2019. 
 
 I desired to identify how Amazon deforestation totals associate with each Brazilian state, weather phenomena, forest fires, population, and GDP(US dollars). I constructed a variety of plots and graphs to look at each of the mentioned features in relation to Amazon deforestation totals between 1999-2019.
 
-Weather phenomena was found to have little correlation with Amazon deforestation between 1999-2019 so I did not include this element for analysis when I went on to further analysis and modeling. Overall, there was a lack of a strong relationship between weather phenomena and Amazonian deforestation, which suggests more human causes of deforestation than natural causes.
+Weather phenomena was found to have little correlation with Amazon deforestation between 1999-2019 (see Amazon.ipynb for further details) so I did not include this element for analysis when I went on to further analysis and modeling. Overall, there was a lack of a strong relationship between weather phenomena and Amazonian deforestation, which suggests more human causes of deforestation than natural causes.
 
-I created a dataset to look at the correlations of the other deforestation related features in comparison with Amazon deforestation as a whole. My plot of the correlations is as follows:
+I created a dataset to look at the correlations of the other deforestation-related features in comparison with Amazon deforestation as a whole. My plot of the correlations is as follows:
 
 ![Correlation.png](Images/correlation.png)
 
-The deforestation amounts for the Brazilian states of Mato Grosso, Para, and Rondonia were the most correlated with total Amazon deforestation amounts across all states.  These states are pretty large states so holding high correlation percentages with total Amazonian deforestation is not unusual. Firespots were about 83% correlated with the total Amazon deforestation suggesting a strong relationship between fire outbreaks and Amazonian deforestation. Fire outbreaks may lead to deforestation. Population and GDP per capita(US dollars) had strong inverse correlations with total deforestation. Population was about 71% inversely correlated with total Amazon deforestation and GDP per capita(US dollars) was about 86% inversely correlated with total Amazon deforestation. Population decreasing with more Amazon deforestation sadly makes sense. GDP per capita(US dollars) decreasing with increasing deforestation of the Amazon could be concerning.
+The deforestation amounts for the Brazilian states of Mato Grosso, Para, and Rondonia were the most correlated with total Amazon deforestation amounts across all states.  These states are fairly large states so holding high correlation percentages with total Amazonian deforestation is not unusual. Firespots were about 83% correlated with the total Amazon deforestation suggesting a strong relationship between fire outbreaks and Amazonian deforestation. Fire outbreaks may lead to deforestation. Population and GDP per capita(US dollars) had strong inverse correlations with total deforestation. Population was about 71% inversely correlated with total Amazon deforestation and GDP per capita(US dollars) was about 86% inversely correlated with total Amazon deforestation. Population decreasing with more Amazon deforestation sadly makes sense. GDP per capita(US dollars) decreasing with increasing deforestation of the Amazon could be concerning.
 
 I used the correlation plotted features that relate to Amazon deforestation when I went on to modeling. 
 
@@ -80,7 +80,7 @@ I proceeded to use arima modeling procedures on each Brazilian state within the 
 
 My full analyses lead me to the following conclusions:
 
-- Acknowledge high deforestation totals and strong seasonality trends of firespots particularly within the Brazilian states of Mato Grosso, Para, and Rondonia to mitigate further and continuing deforestation issues identified within these states. Deforestation has not necessarily decreased over time in these states or as a whole.
+- Deforestation has not necessarily decreased over time. Acknowledge high deforestation totals and strong seasonality trends of firespots particularly within the Brazilian states of Mato Grosso, Para, and Rondonia to mitigate further and continuing deforestation issues identified within these states.
 
 - Recognize possible implications of an unprecedented high number of firespots for the months of March and April in 2019 and the states of Amazonas and Roraima in 2019.  They may be causing deforestation to increase.
 
