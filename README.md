@@ -104,9 +104,9 @@ Contact me at jmstipanowich@gmail.com
 
 ├── Images
 
+├── Amazon.ipynb
+
+├── AmazonRainforestPresentation.pdf
+
 ├── README.md
-
-├── RecommendationSystems.pdf
-
-├── Recommendations.ipynb
 
