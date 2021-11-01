@@ -92,6 +92,8 @@ My full analyses lead me to the following conclusions:
 
 - Incorporate and analyze satellite image classification information that show different activities relating to whether or not deforestation is occurring at given times. These images aid in determining when deforestation is happening.
 
+- Obtain and utilize COVID-19 data to discuss the effects of COVID-19 on deforestation.
+
 ## For More Information
 
 - See the full analysis of my findings in Amazon.ipynb
